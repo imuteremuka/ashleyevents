@@ -139,97 +139,211 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(updateTestimonial, 7000);
     }
 
-    // Featured Products (sample data)
+    // Product Data
     const products = [
+        // Premium Gifts
         {
             id: 1,
             name: "Luxury Gift Box",
-            category: "Premium Gifts",
+            category: "premium",
             price: "R1,299.99",
-            image: "../images/gift-box-1.jpg",
+            image: "images/gift-box-1.jpg",
             isNew: true,
             inWishlist: false
         },
+        // Home & Living
         {
             id: 2,
             name: "Elegant Candle Set",
-            category: "Home Decor",
+            category: "home",
             price: "R899.99",
-            image: "../images/gift-box-2.jpg",
+            image: "images/gift-box-2.jpg",
             isNew: false,
             inWishlist: false
         },
+        // Food & Drinks
         {
             id: 3,
             name: "Gourmet Chocolate Collection",
-            category: "Food & Drinks",
+            category: "food",
             price: "R1,099.99",
-            image: "../images/gift-box-3.jpg",
+            image: "images/gift-box-3.jpg",
             isNew: true,
             inWishlist: false
         },
+        // Self Care
         {
             id: 4,
             name: "Spa Relaxation Box",
-            category: "Self Care",
+            category: "selfcare",
             price: "R1,499.99",
-            image: "../images/gift-box-4.jpg",
+            image: "images/gift-box-4.jpg",
+            isNew: false,
+            inWishlist: false
+        },
+        // Corporate
+        {
+            id: 5,
+            name: "Executive Gift Set",
+            category: "corporate",
+            price: "R1,799.99",
+            image: "images/gift-box-5.jpg",
+            isNew: true,
+            inWishlist: false
+        },
+        // Premium Gifts
+        {
+            id: 6,
+            name: "Deluxe Gift Hamper",
+            category: "premium",
+            price: "R2,199.99",
+            image: "images/gift-box-6.jpg",
+            isNew: false,
+            inWishlist: false
+        },
+        // Home & Living
+        {
+            id: 7,
+            name: "Aromatherapy Set",
+            category: "home",
+            price: "R1,199.99",
+            image: "images/gift-box-7.jpg",
+            isNew: true,
+            inWishlist: false
+        },
+        // Food & Drinks
+        {
+            id: 8,
+            name: "Wine & Cheese Platter",
+            category: "food",
+            price: "R1,599.99",
+            image: "images/gift-box-8.jpg",
             isNew: false,
             inWishlist: false
         }
     ];
-    
+
+    // DOM Elements
     const productsGrid = document.querySelector('.products-grid');
+    const categoryTabs = document.querySelectorAll('.tab-btn');
     
+    // Current filter
+    let currentCategory = 'all';
+    
+    // Render products based on current filter
     function renderProducts() {
-        if (productsGrid) {
-            // Clear loading message
-            productsGrid.innerHTML = '';
-            
-            // Render each product
-            products.forEach(product => {
-                const productElement = document.createElement('div');
-                productElement.className = 'product-card';
-                productElement.innerHTML = `
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}">
-                        ${product.isNew ? '<span class="product-badge">New</span>' : ''}
-                        <div class="product-wishlist" data-product-id="${product.id}">
-                            <i class="far fa-heart"></i>
-                        </div>
+        if (!productsGrid) return;
+        
+        // Filter products based on category
+        const filteredProducts = currentCategory === 'all' 
+            ? products 
+            : products.filter(product => product.category === currentCategory);
+        
+        // Clear existing products
+        productsGrid.innerHTML = '';
+        
+        // Show message if no products found
+        if (filteredProducts.length === 0) {
+            productsGrid.innerHTML = `
+                <div class="no-products">
+                    <i class="fas fa-box-open"></i>
+                    <p>No products found in this category.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        // Render each product
+        filteredProducts.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.className = 'product-card';
+            productElement.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    ${product.isNew ? '<span class="product-badge">New</span>' : ''}
+                    <div class="product-wishlist" data-product-id="${product.id}">
+                        <i class="${product.inWishlist ? 'fas' : 'far'} fa-heart"></i>
                     </div>
-                    <div class="product-details">
-                        <span class="product-category">${product.category}</span>
-                        <h3 class="product-title">${product.name}</h3>
-                        <span class="product-price">${product.price}</span>
-                        <button class="btn btn-primary btn-block">Add to Cart</button>
+                </div>
+                <div class="product-details">
+                    <span class="product-category">${getCategoryName(product.category)}</span>
+                    <h3 class="product-title">${product.name}</h3>
+                    <span class="product-price">${product.price}</span>
+                    <div class="product-actions">
+                        <button class="btn-outline">View Details</button>
+                        <button class="btn-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
                     </div>
-                `;
-                
-                productsGrid.appendChild(productElement);
-            });
+                </div>
+            `;
             
-            // Add event listeners for wishlist buttons
-            document.querySelectorAll('.product-wishlist').forEach(button => {
-                button.addEventListener('click', function() {
-                    const icon = this.querySelector('i');
-                    icon.classList.toggle('far');
-                    icon.classList.toggle('fas');
-                    icon.classList.toggle('active');
-                    
-                    // Add animation
-                    this.style.animation = 'heartBeat 0.5s';
-                    setTimeout(() => {
-                        this.style.animation = '';
-                    }, 500);
-                });
-            });
+            productsGrid.appendChild(productElement);
+        });
+        
+        // Add event listeners to wishlist buttons
+        document.querySelectorAll('.product-wishlist').forEach(button => {
+            button.addEventListener('click', toggleWishlist);
+        });
+    }
+    
+    // Helper function to get category name from slug
+    function getCategoryName(slug) {
+        const categories = {
+            'premium': 'Premium Gifts',
+            'home': 'Home & Living',
+            'food': 'Food & Drinks',
+            'selfcare': 'Self Care',
+            'corporate': 'Corporate'
+        };
+        return categories[slug] || slug;
+    }
+    
+    // Toggle product wishlist status
+    function toggleWishlist(e) {
+        const button = e.currentTarget;
+        const productId = parseInt(button.dataset.productId);
+        const product = products.find(p => p.id === productId);
+        
+        if (product) {
+            product.inWishlist = !product.inWishlist;
+            const icon = button.querySelector('i');
+            icon.className = product.inWishlist ? 'fas fa-heart' : 'far fa-heart';
+            
+            // Optional: Add animation
+            button.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 200);
         }
     }
     
-    // Initialize products
-    renderProducts();
+    // Handle category tab clicks
+    function handleCategoryClick(e) {
+        // Update active tab
+        categoryTabs.forEach(tab => tab.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        
+        // Update current category and re-render products
+        currentCategory = e.currentTarget.dataset.category;
+        renderProducts();
+        
+        // Scroll to products section
+        document.querySelector('.products-section').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
     
+    // Add event listeners
+    if (categoryTabs.length > 0) {
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', handleCategoryClick);
+        });
+    }
+    
+    // Initial render
+    renderProducts();
+
     // Newsletter Form Submission
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {

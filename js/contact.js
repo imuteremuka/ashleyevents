@@ -1,4 +1,7 @@
-/**
+.DS_Store
+node_modules/
+*.log
+.env/**
  * Contact Page JavaScript
  * Handles form validation, submission, FAQ accordion, and other interactive elements
  */

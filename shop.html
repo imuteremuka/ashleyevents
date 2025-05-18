@@ -161,31 +161,81 @@
             </div>
         </section>
         
+        <!-- Gift Categories -->
+        <section class="gift-categories section-padding">
+            <div class="container">
+                <h2 class="section-title text-center">Shop by Category</h2>
+                <div class="categories-grid">
+                    <a href="#" class="category-card" data-category="build-your-own">
+                        <div class="category-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Build Your Own Gift</h3>
+                        <p>Create a custom gift box with your choice of items</p>
+                    </a>
+                    <a href="#" class="category-card" data-category="for-her">
+                        <div class="category-icon">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h3>For Her</h3>
+                        <p>Thoughtful gifts for the special women in your life</p>
+                    </a>
+                    <a href="#" class="category-card" data-category="for-him">
+                        <div class="category-icon">
+                            <i class="fas fa-male"></i>
+                        </div>
+                        <h3>For Him</h3>
+                        <p>Perfect gifts for the men who deserve it</p>
+                    </a>
+                    <a href="#" class="category-card" data-category="for-baby">
+                        <div class="category-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3>For Baby</h3>
+                        <p>Adorable gifts for the little ones</p>
+                    </a>
+                    <a href="#" class="category-card" data-category="personalised">
+                        <div class="category-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>Personalised Gifts</h3>
+                        <p>Add a special touch with custom engravings</p>
+                    </a>
+                    <a href="#" class="category-card" data-category="corporate">
+                        <div class="category-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Corporate Gifts</h3>
+                        <p>Professional gifts for your business associates</p>
+                    </a>
+                    <a href="#" class="category-card" data-category="holiday-specials">
+                        <div class="category-icon">
+                            <i class="fas fa-holly-berry"></i>
+                        </div>
+                        <h3>Holiday Specials</h3>
+                        <p>Seasonal gifts for all your celebrations</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Products Grid -->
         <section class="products-section section-padding bg-light">
             <div class="container">
-                <div class="products-header">
-                    <h2>Featured Gifts</h2>
-                    <p>Showing <span id="showing-count">12</span> of <span id="total-count">24</span> products</p>
+                <!-- Category Tabs -->
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="all">All Products</button>
+                    <button class="tab-btn" data-category="premium">Premium Gifts</button>
+                    <button class="tab-btn" data-category="home">Home & Living</button>
+                    <button class="tab-btn" data-category="food">Food & Drinks</button>
+                    <button class="tab-btn" data-category="selfcare">Self Care</button>
+                    <button class="tab-btn" data-category="corporate">Corporate</button>
                 </div>
-                
-                <div class="products-grid" id="products-container">
-                    <!-- Products will be loaded dynamically via JavaScript -->
-                    <div class="product-loading">Loading products...</div>
-                </div>
-                
-                <div class="pagination">
-                    <button class="pagination-btn" id="prev-page" disabled>
-                        <i class="fas fa-chevron-left"></i> Previous
-                    </button>
-                    <div class="page-numbers">
-                        <button class="page-number active">1</button>
-                        <button class="page-number">2</button>
-                        <button class="page-number">3</button>
-                    </div>
-                    <button class="pagination-btn" id="next-page">
-                        Next <i class="fas fa-chevron-right"></i>
-                    </button>
+
+                <!-- Products will be loaded here by JavaScript -->
+                <div class="products-grid">
+                    <!-- Products will be inserted here by JavaScript -->
+                    <div class="loading">Loading products...</div>
                 </div>
             </div>
         </section>
