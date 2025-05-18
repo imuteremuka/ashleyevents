@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Ashel Events</title>
+    <meta name="description" content="Browse our gallery of beautifully planned events and styled gift boxes by Ashel Events.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Ashel Events</a>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Explore our portfolio of beautifully executed events and styled gift boxes</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="gallery-page">
+        <!-- Gallery Filters -->
+        <section class="gallery-filters section-padding">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="weddings">Weddings</button>
+                    <button class="filter-btn" data-filter="corporate">Corporate Events</button>
+                    <button class="filter-btn" data-filter="birthdays">Birthdays</button>
+                    <button class="filter-btn" data-filter="baby-showers">Baby Showers</button>
+                    <button class="filter-btn" data-filter="gift-boxes">Gift Boxes</button>
+                    <button class="filter-btn" data-filter="styling">Event Styling</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="gallery-grid-section section-padding bg-light">
+            <div class="container">
+                <div class="masonry-grid" id="gallery-container">
+                    <!-- Gallery items will be loaded via JavaScript -->
+                    <div class="gallery-loading">Loading gallery...</div>
+                </div>
+                
+                <div class="load-more">
+                    <button class="btn btn-primary" id="load-more">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Event -->
+        <section class="featured-event section-padding">
+            <div class="container">
+                <div class="featured-event-content">
+                    <div class="featured-event-text">
+                        <span class="section-subtitle">Featured Event</span>
+                        <h2>Elegant Garden Wedding</h2>
+                        <p>Our team transformed a simple garden into a romantic oasis for Sarah & Michael's wedding. From the floral arch to the tablescapes, every detail was carefully curated to create a magical atmosphere.</p>
+                        <div class="event-details">
+                            <div class="detail">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>June 15, 2024</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Botanical Gardens, City</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>120 Guests</span>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Plan Your Event</a>
+                    </div>
+                    <div class="featured-event-image">
+                        <div class="image-slider">
+                            <div class="slider-nav">
+                                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="slider-container">
+                                <div class="slider-track">
+                                    <div class="slide">
+                                        <img src="images/featured-wedding-1.jpg" alt="Wedding ceremony setup">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="images/featured-wedding-2.jpg" alt="Reception tables">
+                                    </div>
+                                    <div class="slide">
+                                        <img src="images/featured-wedding-3.jpg" alt="Floral arrangements">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section-padding bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Client Love</h2>
+                    <p>What our clients say about working with us</p>
+                </div>
+                <div class="testimonial-slider">
+                    <!-- Testimonials will be loaded via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Create Unforgettable Memories?</h2>
+                    <p>Let's bring your vision to life with our expert event planning and styling services.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-light">Get in Touch</a>
+                        <a href="services.html" class="btn btn-outline-light">
+                            <i class="fas fa-calendar-alt"></i> Our Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Ashel Events</h3>
+                    <p>Creating unforgettable moments through elegant event planning and beautifully curated gift boxes.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> hello@ashelevents.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Event Street, City, Country</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for event tips and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ashel Events. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightgallery" class="lightgallery">
+        <!-- Gallery items will be added here by JavaScript -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
