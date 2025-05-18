@@ -437,6 +437,128 @@ ul { list-style: none; }
     z-index: 2;
 }
 
+/* Services Section - Three Column Layout */
+.services-categories {
+    margin: 0 -15px;
+}
+
+.services-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.service-category {
+    flex: 1 1 300px;
+    margin: 0 15px 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-category-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-category h3 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.service-category-desc {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.service-feature {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.service-feature i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.service-feature h4 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.service-feature p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.service-feature ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.service-feature ul li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.service-feature ul li:before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.service-cta {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .service-category {
+        flex: 1 1 calc(50% - 30px);
+    }
+}
+
+@media (max-width: 767px) {
+    .service-category {
+        flex: 1 1 100%;
+        margin: 0 0 30px;
+    }
+    
+    .services-row {
+        margin: 0;
+    }
+}
+
 /* ===== Featured Products ===== */
 .products-grid {
     display: grid;
