@@ -143,35 +143,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const products = [
         {
             id: 1,
-            name: "Luxury Spa Box",
-            category: "For Her",
-            price: "$89.99",
-            image: "images/products/spa-box.jpg",
-            isNew: true
+            name: "Luxury Gift Box",
+            category: "Premium Gifts",
+            price: "R1,299.99",
+            image: "../images/gift-box-1.jpg",
+            isNew: true,
+            inWishlist: false
         },
         {
             id: 2,
-            name: "Gourmet Delight",
-            category: "Gourmet",
-            price: "$65.99",
-            image: "images/products/gourmet-box.jpg",
-            isNew: false
+            name: "Elegant Candle Set",
+            category: "Home Decor",
+            price: "R899.99",
+            image: "../images/gift-box-2.jpg",
+            isNew: false,
+            inWishlist: false
         },
         {
             id: 3,
-            name: "Baby Shower Gift Set",
-            category: "For Baby",
-            price: "$75.50",
-            image: "images/products/baby-box.jpg",
-            isNew: true
+            name: "Gourmet Chocolate Collection",
+            category: "Food & Drinks",
+            price: "R1,099.99",
+            image: "../images/gift-box-3.jpg",
+            isNew: true,
+            inWishlist: false
         },
         {
             id: 4,
-            name: "Premium Whiskey Set",
-            category: "For Him",
-            price: "$99.99",
-            image: "images/products/whiskey-set.jpg",
-            isNew: false
+            name: "Spa Relaxation Box",
+            category: "Self Care",
+            price: "R1,499.99",
+            image: "../images/gift-box-4.jpg",
+            isNew: false,
+            inWishlist: false
         }
     ];
     
