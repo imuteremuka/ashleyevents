@@ -22,16 +22,11 @@
 }
 
 /* Contact Grid */
-.contact-grid {
+.contact-methods-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
-    margin-top: 60px;
-}
-
-.contact-methods {
-    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    margin-bottom: 60px;
 }
 
 .contact-method {
@@ -42,6 +37,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: flex-start;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .contact-method:hover {
@@ -126,7 +123,9 @@
     border-radius: 10px;
     padding: 40px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .form-header {
@@ -404,8 +403,12 @@ textarea.form-control {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .contact-grid {
+    .contact-methods-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .contact-method {
+        margin-bottom: 20px;
     }
     
     .map-overlay {
@@ -472,4 +475,8 @@ textarea.form-control {
 
 .faq-answer {
     animation: fadeIn 0.3s ease forwards;
+}
+
+.contact-grid {
+    display: block;
 }
