@@ -1,10 +1,28 @@
 /* Contact Page Styles */
+.contact-page {
+    background: linear-gradient(135deg, #F8C8DC 0%, #F5E6CA 100%);
+    min-height: 100vh;
+}
+
 .contact-page .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
                 url('../images/contact-hero.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 120px 0 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-page .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(248, 200, 220, 0.9) 0%, rgba(245, 230, 202, 0.9) 100%);
+    z-index: -1;
 }
 
 .contact-page .page-header h1 {
@@ -30,15 +48,13 @@
 }
 
 .contact-method {
-    background: white;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: flex-start;
-    height: 100%;
-    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .contact-method:hover {
@@ -119,13 +135,12 @@
 
 /* Contact Form */
 .contact-form-container {
-    background: white;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     padding: 40px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .form-header {
@@ -228,8 +243,10 @@ textarea.form-control {
 .map-container {
     position: relative;
     height: 500px;
-    border-radius: 0;
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 #map {
@@ -284,7 +301,10 @@ textarea.form-control {
 
 /* FAQ Section */
 .faq-section {
-    padding: 80px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 60px 0;
+    margin: 40px 0;
+    border-radius: 15px;
 }
 
 .faq-container {
@@ -403,81 +423,112 @@ textarea.form-control {
 
 /* Social Media Section */
 .social-media-section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 60px 0;
+    margin: 40px 0;
+    border-radius: 15px;
     text-align: center;
-    margin: 60px 0;
-    padding: 40px 0;
-    background-color: #f9f9f9;
-    border-radius: 10px;
 }
 
 .social-media-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
     color: var(--text-dark);
+    margin-bottom: 40px;
     font-family: 'Playfair Display', serif;
-    font-weight: 600;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
 }
 
-.social-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.social-media-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary);
+}
+
+.social-links-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .social-link {
     display: flex;
     align-items: center;
-    padding: 15px 25px;
-    background: white;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 18px 25px;
     text-decoration: none;
-    color: var(--text);
+    color: #333; /* Darker text color for better visibility */
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     height: 100%;
     box-sizing: border-box;
 }
 
 .social-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: #222; /* Even darker on hover */
 }
 
 .social-link i {
     font-size: 1.5rem;
-    margin-right: 15px;
-    width: 24px;
+    width: 40px;
     text-align: center;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    color: #333; /* Default icon color */
 }
 
 .social-link span {
     font-size: 1rem;
     font-weight: 500;
+    transition: all 0.3s ease;
+    color: #333; /* Ensure text is dark enough */
 }
 
-/* Social media brand colors */
-.social-link[aria-label="Instagram"] {
-    color: #E1306C;
-    border-color: #f8e0e8;
+.social-link[aria-label="Instagram"] i {
+    color: #E1306C; /* Instagram pink */
 }
 
-.social-link[aria-label="Pinterest"] {
-    color: #E60023;
-    border-color: #fae0e4;
+.social-link[aria-label="Pinterest"] i {
+    color: #E60023; /* Pinterest red */
 }
 
-.social-link[aria-label="Facebook"] {
-    color: #1877F2;
-    border-color: #e0e8f8;
+.social-link[aria-label="Facebook"] i {
+    color: #1877F2; /* Facebook blue */
 }
 
-.social-link[aria-label="TikTok"] {
+.social-link[aria-label="TikTok"] i {
+    color: #000000; /* Black for TikTok */
+    /* Add a subtle glow to make black icon visible on dark hover */
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+}
+
+.social-link:hover i,
+.social-link:hover span {
+    color: #111; /* Even darker on hover */
+}
+
+.social-link[aria-label="TikTok"]:hover i {
     color: #000000;
-    border-color: #e0e0e0;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
 }
 
 /* Responsive adjustments */
@@ -570,4 +621,45 @@ textarea.form-control {
 
 .contact-grid {
     display: block;
+}
+
+/* Update section backgrounds to be semi-transparent */
+.contact-info-section,
+.faq-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 60px 0;
+    margin: 40px 0;
+    border-radius: 15px;
+}
+
+/* Style the FAQ section to match the theme */
+.faq-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 60px 0;
+}
+
+/* Update buttons to match the color scheme */
+.btn-primary {
+    background-color: #E8B4BC; /* Soft rose accent */
+    border-color: #E8B4BC;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d89ca5;
+    border-color: #d89ca5;
+}
+
+/* Update form inputs to match the theme */
+.form-control {
+    border: 1px solid #F5E6CA;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #F8C8DC;
+    box-shadow: 0 0 0 0.2rem rgba(248, 200, 220, 0.25);
 }
