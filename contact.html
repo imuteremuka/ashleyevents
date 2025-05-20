@@ -57,7 +57,7 @@
                         <div class="contact-details">
                             <h3>Call Us</h3>
                             <p>Speak with our event specialists</p>
-                            <a href="tel:+1234567890" class="contact-link">+1 (234) 567-890</a>
+                            <a href="tel:+27837190990" class="contact-link">+27 (837) 190-990 </a>
                             <p class="hours">Monday - Friday: 9:00 AM - 6:00 PM</p>
                             <p class="hours">Saturday: 10:00 AM - 4:00 PM</p>
                         </div>
@@ -83,9 +83,9 @@
                         </div>
                         <div class="contact-details">
                             <h3>Visit Us</h3>
-                            <p>123 Event Street</p>
-                            <p>City, State 12345</p>
-                            <p>Country</p>
+                            <p>3 St James Street, Parklands, </p>
+                            <p>Cape Town, 7441,</p>
+                            <p> RSA</p>
                             <p class="hours">By appointment only</p>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                         <div class="contact-details">
                             <h3>Chat With Us</h3>
                             <p>Available during business hours</p>
-                            <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <a href="https://wa.me/+27837190990" class="whatsapp-btn" target="_blank" rel="noopener">
                                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                             </a>
                             <p class="small">Click to start a conversation</p>
@@ -207,8 +207,8 @@
                     <div class="map-overlay">
                         <div class="overlay-content">
                             <h3>Our Office</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> 123 Event Street, City, Country</p>
-                            <p><i class="fas fa-phone"></i> +1 (234) 567-890</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 3 St James Street, Parklands, Cape Town, 7441, RSA</p>
+                            <p><i class="fas fa-phone"></i> +27 (837) 190-0990</p>
                             <p><i class="fas fa-envelope"></i> hello@ashelevents.com</p>
                             <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-outline">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -294,7 +294,7 @@
                     <p>Schedule a free consultation with our event specialists today</p>
                     <div class="cta-buttons">
                         <a href="#contactForm" class="btn btn-light">Book a Consultation</a>
-                        <a href="tel:+1234567890" class="btn btn-outline-light">
+                        <a href="tel:+837190990" class="btn btn-outline-light">
                             <i class="fas fa-phone"></i> Call Now
                         </a>
                     </div>
@@ -330,8 +330,8 @@
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
                     <p><i class="fas fa-envelope"></i> hello@ashelevents.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Event Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +27 (837) 190-0990</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 3 St James Street, Parklands, Cape Town, 7441, RSA</p>
                 </div>
                 <div class="footer-newsletter">
                     <h4>Newsletter</h4>
@@ -364,17 +364,17 @@
     <script>
         // Initialize map
         document.addEventListener('DOMContentLoaded', function() {
-            // Coordinates for the map (example: New York City)
-            const map = L.map('map').setView([40.7128, -74.0060], 13);
+            // Coordinates for Milnerton, Cape Town
+            const map = L.map('map').setView([-33.8667, 18.5000], 16);
             
             // Add OpenStreetMap tiles
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
             
-            // Add a marker
-            L.marker([40.7128, -74.0060]).addTo(map)
-                .bindPopup('Ashel Events<br>123 Event Street, City')
+            // Add a marker for the exact address
+            L.marker([-33.8667, 18.5000]).addTo(map)
+                .bindPopup('Ashel Events<br>3 St James Lane, Cape Farms, 7441, Milnerton')
                 .openPopup();
         });
         
