@@ -247,17 +247,15 @@ ul { list-style: none; }
 
 /* ===== Hero Section ===== */
 .hero {
-    height: 100vh;
-    min-height: 700px;
     position: relative;
-    margin-top: 80px;
+    height: 90vh;
+    min-height: 600px;
     overflow: hidden;
 }
 
 .hero-slider {
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
 .slide {
@@ -268,77 +266,53 @@ ul { list-style: none; }
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .slide.active {
     opacity: 1;
 }
 
-.slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 31, 61, 0.4);
+/* Specific slide backgrounds */
+.hero-slide-1 {
+    background-image: url('../images/hero1.jpg');
 }
 
 .slide-content {
     position: relative;
     z-index: 2;
-    color: var(--color-white);
-    max-width: 700px;
-    padding: 0 20px;
+    max-width: 600px;
+    padding: 0 2rem;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide-content h1 {
-    font-size: 4rem;
-    color: var(--color-white);
-    margin-bottom: 20px;
-    line-height: 1.2;
-    animation: fadeInUp 1s ease;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .slide-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    animation: fadeInUp 1s ease 0.2s;
-    animation-fill-mode: both;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
-    animation: fadeInUp 1s ease 0.4s;
-    animation-fill-mode: both;
-}
-
-.hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--color-white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-.hero-scroll span {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 /* ===== Services Section ===== */
@@ -951,6 +925,19 @@ ul { list-style: none; }
 .footer-legal a:hover {
     opacity: 1;
     color: var(--color-primary);
+}
+
+/* ===== Accessibility ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ===== Animations ===== */
