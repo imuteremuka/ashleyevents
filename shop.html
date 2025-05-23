@@ -264,6 +264,62 @@
     <!-- Scripts -->
     <script src="js/cart.js"></script>
     <script src="js/shop.js"></script>
-    <script src="js/main.js"></script>
+/* Shop Page Styles */
+.shop-page {
+    padding-top: 60px;
+}
+
+/* Page Header */
+.page-header {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(248, 200, 220, 0.9) 0%, rgba(245, 230, 202, 0.9) 100%);
+    z-index: 1;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark);
+}
+
+.page-header p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 80px 0;
+        min-height: 300px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+}<!-- Page Header -->
+<header class="page-header">
+    <div class="container">
+        <h1>Shop Gifts</h1>
+        <p>Discover our curated collection of gifts for every occasion</p>
+    </div>
+</header><link rel="stylesheet" href="css/shop.css">    <script src="js/main.js"></script>
 </body>
 </html>
