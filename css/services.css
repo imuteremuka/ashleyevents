@@ -1,0 +1,56 @@
+/* Services Page Styles */
+.services-page {
+    padding-top: 80px; /* Match about page padding */
+}
+
+/* Page Header */
+.page-header {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 80px 0 60px; /* Match about page padding */
+    min-height: 300px; /* Match about page height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F8C8DC 0%, #F5E6CA 100%); /* Match about page gradient */
+    z-index: 1;
+    margin-top: 0; /* Remove margin-top as it's handled by padding */
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px; /* Match about page spacing */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333; /* Match about page text color */
+    text-align: center;
+    width: 100%;
+}
+
+.page-header p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: #555; /* Match about page text color */
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 60px 0 40px; /* Adjusted for mobile */
+        min-height: 250px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+}
