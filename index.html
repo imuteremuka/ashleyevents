@@ -13,7 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         .hero-slide-1 {
-            background-image: url('images/hero1.jpg');
+            background: linear-gradient(rgba(10, 31, 61, 0.7), rgba(10, 31, 61, 0.7)), 
+                        url('images/hero1.jpg') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-slide-1::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, #fff);
+            z-index: 2;
         }
     </style>
 </head>
@@ -48,22 +61,60 @@
     <header class="hero">
         <div class="hero-slider">
             <div class="slide active hero-slide-1">
-                <div class="slide-content">
-                    <h1>Plan Your Dream Event</h1>
-                    <p>We'll handle the magic while you enjoy every moment</p>
-                    <div class="hero-buttons">
-                        <a href="book.html" class="btn btn-primary">Book an Event</a>
-                        <a href="shop.html" class="btn btn-secondary">Shop Gifts</a>
+                <div class="container">
+                    <div class="slide-content">
+                        <span class="hero-subtitle">Welcome to Ashel Events</span>
+                        <h1>Create Unforgettable Moments</h1>
+                        <p>From dream weddings to corporate galas, we bring your vision to life with elegance and precision</p>
+                        <div class="hero-buttons">
+                            <a href="services.html" class="btn btn-primary">Explore Services</a>
+                            <a href="contact.html" class="btn btn-outline-light">Get a Quote</a>
+                        </div>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Custom Event Planning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Beautiful Gift Boxes</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Nationwide Service</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Additional slides will be added via JavaScript -->
         </div>
         <div class="hero-scroll">
-            <span>Scroll Down</span>
+            <span>Discover More</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </header>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stat-item">
+                <span class="stat-number" data-count="200">0</span>+
+                <span class="stat-label">Events Planned</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="500">0</span>+
+                <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="50">0</span>+
+                <span class="stat-label">Gift Options</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="100">0</span>%
+                <span class="stat-label">Satisfaction</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Preview -->
     <section class="services-preview section-padding">
@@ -212,5 +263,6 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
