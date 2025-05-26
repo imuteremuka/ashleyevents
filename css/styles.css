@@ -245,6 +245,53 @@ ul { list-style: none; }
     transition: var(--transition);
 }
 
+/* Cart Icon Styles */
+.cart-icon {
+    position: relative;
+    margin-left: 15px;
+}
+
+.cart-icon a {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.cart-icon a:hover {
+    color: var(--color-primary);
+}
+
+.cart-icon i {
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the cart count is visible on all pages */
+.nav-links .cart-icon a::after {
+    display: none;
+}
+
 /* ===== Hero Section ===== */
 .hero {
     position: relative;
@@ -352,10 +399,7 @@ ul { list-style: none; }
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     text-align: center;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    margin: 0 20px;
 }
 
 .service-card::before {
@@ -1196,7 +1240,7 @@ ul { list-style: none; }
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
