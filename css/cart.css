@@ -1,3 +1,28 @@
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #F8C8DC 0%, #F5E6CA 100%);
+    padding: 100px 0;
+    text-align: center;
+    color: var(--color-dark);
+    margin-top: 80px; /* Add space for fixed navbar */
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.page-header p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
 /* Cart Page Styles */
 .cart-page {
     padding: 60px 0;
